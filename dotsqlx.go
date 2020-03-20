@@ -89,7 +89,11 @@ type NamedBinder interface {
 }
 
 type DotSqlx struct {
-	dotsql.DotSql
+	*dotsql.DotSql
+}
+
+func Wrap(d *dotsql.DotSql) *DotSqlx {
+	return &DotSqlx{d}
 }
 
 func (d DotSqlx) Preparex(dbx Preparerx, name string) (*sqlx.Stmt, error) {
@@ -270,4 +274,13 @@ func (d DotSqlx) BindNamed(dbx NamedBinder, name string, arg interface{}) (strin
 	}
 
 	return dbx.BindNamed(query, arg)
+}
+
+func (d DotSqlx) In(name string, args ...interface{}) (string, []interface{}, error) {
+	query, err := d.Raw(name)
+	if err != nil {
+		return "", nil, err
+	}
+
+	return sqlx.In(query, args...)
 }
