@@ -1,6 +1,6 @@
 module github.com/swithek/dotsqlx
 
-go 1.14
+go 1.12
 
 require (
 	github.com/gchaincl/dotsql v1.0.0

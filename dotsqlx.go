@@ -186,22 +186,22 @@ func (d DotSqlx) QueryRowxContext(ctx context.Context, dbx QueryRowerxContext, n
 	return dbx.QueryRowxContext(ctx, query, args...), nil
 }
 
-func (d DotSqlx) MustExec(dbx MustExecer, name string, args ...interface{}) (sql.Result, error) {
+func (d DotSqlx) MustExec(dbx MustExecer, name string, args ...interface{}) sql.Result {
 	query, err := d.Raw(name)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 
-	return dbx.MustExec(query, args...), nil
+	return dbx.MustExec(query, args...)
 }
 
-func (d DotSqlx) MustExecContext(ctx context.Context, dbx MustExecerContext, name string, args ...interface{}) (sql.Result, error) {
+func (d DotSqlx) MustExecContext(ctx context.Context, dbx MustExecerContext, name string, args ...interface{}) sql.Result {
 	query, err := d.Raw(name)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 
-	return dbx.MustExecContext(ctx, query, args...), nil
+	return dbx.MustExecContext(ctx, query, args...)
 }
 
 func (d DotSqlx) Rebind(dbx Rebinder, name string) (string, error) {
