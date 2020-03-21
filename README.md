@@ -35,7 +35,7 @@ if err = dotx.Select(dbx, &users, "select_users"); err != nil {
 }
 
 // you can use dotsql's methods as well.
-res, err := dotx.Exec(db, "insert_user")
+res, err := dotx.Exec(dbx, "insert_user")
 if err != nil {
     // handle error
 }
