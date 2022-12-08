@@ -4,7 +4,7 @@
 [![Build status](https://travis-ci.org/swithek/dotsqlx.svg?branch=master)](https://travis-ci.org/swithek/dotsqlx)
 [![Go Report Card](https://goreportcard.com/badge/github.com/swithek/dotsqlx)](https://goreportcard.com/report/github.com/swithek/dotsqlx)
 
-[Dotsql](https://github.com/gchaincl/dotsql) wrapper allowing seemless work with [jmoiron/sqlx](https://github.com/jmoiron/sqlx)
+[Dotsql](https://github.com/qustavo/dotsql) wrapper allowing seemless work with [jmoiron/sqlx](https://github.com/jmoiron/sqlx)
 
 ## Installation
 ```
