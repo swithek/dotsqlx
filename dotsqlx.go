@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/gchaincl/dotsql"
+	"github.com/qustavo/dotsql"
 	"github.com/jmoiron/sqlx"
 )
 
@@ -108,7 +108,7 @@ type NamedBinder interface {
 	BindNamed(query string, arg interface{}) (string, []interface{}, error)
 }
 
-// DotSqlx wraps dotsql.DotSql instance and allows seemless work with
+// DotSqlx wraps dotsql.DotSql instance and allows seamless work with
 // jmoiron/sqlx.
 type DotSqlx struct {
 	*dotsql.DotSql
